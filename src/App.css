@@ -1,38 +1,213 @@
-.App {
-  text-align: center;
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Ensure full height for sections */
+html, body {
+  height: 100%;
+  font-family: 'Allura', cursive;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Wedding Invite Section */
+.invite-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Dark overlay for better text visibility */
+.invite-overlay {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
+  text-align: center;
+  padding: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* Wedding Title */
+.invite-title {
+  font-size: 4rem;
+  font-weight: 300; /* Lighter font weight for sharper text */
+  font-family: 'Monsieur La Doulaise', cursive; /* You can change to another lighter font if you want */
+  letter-spacing: 1px; /* Adjusted letter-spacing for a sharper feel */
+  text-transform: capitalize;
+  line-height: 1.3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Welcome Text */
+.invite-text {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  font-family: 'Dancing Script', cursive; /* Change this to a lighter version if needed */
+  font-weight: normal; /* Less bold */
+}
+
+/* RSVP Button */
+.invite-button {
+  margin-top: 1.5rem;
+  background-color: transparent; /* Transparent background */
+  color: white; /* White text */
+  border: 2px solid white; /* White border */
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0; /* Remove rounded corners for sharp edges */
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.invite-button:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Slight white background on hover */
+  color: #0d4a3c; /* Ensure text stays white */
+  border-color: #0d4a3c; /* Change border color on hover */
+}
+
+/* Section Styling */
+.section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+}
+
+/* Alternating Background Colors */
+.bg-white {
+  background-color: white;
+}
+
+.bg-gray {
+  background-color: #f5f5f5;
+}
+
+/* RSVP Section with Diagonal Cut */
+.rsvp-section {
+  height: 50vh;
+  background-color: #0f5e4d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  font-family: 'Lora', serif;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+/* Title */
+.rsvp-title {
+  font-size: 2.2rem;
+  font-family: 'Playfair Display', serif;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+}
+
+/* Form Container */
+.rsvp-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1400px;
+}
+
+/* Expanding column width */
+.rsvp-column {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+/* Form elements */
+.rsvp-item {
+  margin-bottom: 1.2rem;
+  text-align: left;
+  width: 100%;
+}
+
+/* Inputs & Select Dropdowns */
+.rsvp-item input,
+.rsvp-item select,
+.rsvp-item textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1.5px solid white;
+  border-radius: 6px;
+  outline: none;
+  background: white;
+  color: black;
+  font-family: 'Lora', serif;
+  font-weight: normal;
+}
+
+/* Label Styling (Left-Aligned) */
+.rsvp-item label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  color: white;
+  text-align: left;
+  font-weight: normal;
+}
+
+/* Checkbox Styling */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  text-align: left;
+  font-family: 'Lora', serif;
+  font-weight: normal;
+}
+
+.checkbox-container input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Textarea (For Questions) */
+.rsvp-item textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Submit Button */
+.rsvp-item button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+  color: #0f5e4d;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  font-family: 'Lora', serif;
+  font-weight: normal;
+}
+
+.rsvp-item button:hover {
+  background-color: #e0e0e0;
+  color: #0d4a3c;
 }
