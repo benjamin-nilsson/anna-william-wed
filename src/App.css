@@ -211,3 +211,33 @@ html, body {
   background-color: #e0e0e0;
   color: #0d4a3c;
 }
+
+/* Responsive RSVP Section */
+@media (max-width: 768px) {
+  .rsvp-section {
+    height: auto; /* Remove fixed height for better mobile fit */
+    padding: 3rem 1.5rem;
+    clip-path: none; /* Remove diagonal cut on mobile */
+  }
+
+  .rsvp-title {
+    font-size: 1.8rem; /* Slightly smaller title */
+  }
+
+  .rsvp-columns {
+    flex-direction: column; /* Stack columns */
+    gap: 1.5rem;
+  }
+
+  .rsvp-column {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .rsvp-item {
+    width: 100%;
+  }
+
+  .rsvp-item button {
+    width: 100%; /* Full width button */
+  }
+}

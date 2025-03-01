@@ -1,100 +1,123 @@
-/* Full-screen section with adjusted height */
-.full-screen {
-    height: 150vh; /* 150% of the viewport height */
+ /* Full-screen section with complete isolation */
+ .full-screen {
+    min-height: 100vh; /* Ensures it takes up the full viewport height */
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align everything from the top */
+    justify-content: flex-start; /* Content starts from the top */
     align-items: center;
-    padding: 0;
-    position: relative; /* Allow positioning of the heading and images */
-  }
-  
-  /* Basic styling for the heading */
-  h2 {
+    padding-top: 5rem; /* Adjust top padding for spacing */
+    position: relative; /* Ensure nothing overlaps */
+    background-color: white; /* Keeps background clean */
+    overflow: hidden; /* Prevents overlap from other sections */
+}
+
+/* Ensure no other content gets entangled */
+.full-screen::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc; /* Subtle separation from other sections */
+    position: absolute;
+    bottom: 0;
+}
+
+/* Heading and description */
+h2 {
     font-size: 2rem;
     font-weight: 600;
     color: #0f5e4d;
-    z-index: 10; /* Ensure the heading stays on top of images */
+    z-index: 10;
     position: relative;
-    margin-top: 3rem; /* Adjust as necessary for spacing from the top */
-  }
-  
-  /* Basic styling for the sentence below the title */
-  .description {
+    margin-top: 2rem;
+}
+
+.description {
     font-size: 1.25rem;
     color: #0f5e4d;
-    margin-top: 1rem; /* Space between the heading and sentence */
-    z-index: 10; /* Ensure the sentence stays on top of images */
+    margin-top: 0.5rem;
+    z-index: 10;
     position: relative;
-  }
-  
-  /* White & Green Circles Styling */
-  .circles-container {
-    display: flex;
-    justify-content: center; /* Center the circles horizontally */
-    gap: 2rem; /* Adjust gap between the circles */
-    margin-top: 2rem; /* Space between the sentence and the circles */
-  }
-  
-  .circles-container .circle {
-    width: 8rem; /* Circle size */
-    height: 8rem; /* Circle size */
-    border-radius: 50%; /* Make the circles round */
-    border: 2px solid #cbd5e0; /* Border around the circle */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Shadow for the circle */
-  }
-  
-  .bg-white {
-    background-color: white;
-  }
-  
-  .bg-green-500 {
-    background-color: #48bb78; /* Green color */
-  }
+}
 
-  .bg-beige-500 {
-    background-color: #EADDC8 ; /* Beige color */
-  }
-  
-  /* Grid layout styling */
-  .grid-layout {
+/* Color Circles */
+.circles-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Default circle size */
+.circles-container .circle {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    border: 2px solid #cbd5e0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive circle sizes */
+@media (max-width: 768px) {
+    .circles-container {
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .circles-container .circle {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+/* Background Colors */
+.bg-matcha { background-color: #809671; }
+.bg-pistashe { background-color: #B3B792; }
+.bg-carob { background-color: #725C3A; }
+.bg-almond { background-color: #E5E0D8; }
+.bg-chai { background-color: #D2AB80; }
+.bg-vanilla { background-color: #E5D2B8; }
+
+/* Dress Code Image Grid - Responsive & Compact */
+.grid-layout {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Set the grid to 3 equal columns */
-    gap: 20px; /* Space between images */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Auto-adjust columns */
+    gap: 15px; /* Reduced gap to prevent large white spaces */
     width: 100%;
-    margin-top: 4rem; /* Adjust to add more space between circles/text and images */
-    z-index: 2; /* Ensure it's above circles */
-  }
-  
-  /* Image styling */
-  .image-1,
-  .image-2,
-  .image-3,
-  .image-4,
-  .image-5,
-  .image-6 {
-    object-fit: cover;
+    max-width: 900px;
+    margin-top: 3rem;
+    z-index: 2;
+    align-items: stretch; /* Ensures all images stretch equally */
+}
+
+/* Ensure images fully fill their grid area */
+.grid-layout img {
+    object-fit: cover; /* Ensures images fill without distortion */
     width: 100%;
     height: 100%;
-  }
-  
-  /* Adjustments for responsiveness */
-  @media (max-width: 768px) {
+    aspect-ratio: 4/5; /* Ensures consistent height-width ratio */
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Optimized Layout for Different Screens */
+@media (max-width: 768px) {
     .grid-layout {
-      grid-template-columns: repeat(2, 1fr); /* 2 columns layout on smaller screens */
-      grid-template-rows: repeat(3, 1fr); /* Adjust for better space management */
+        grid-template-columns: repeat(2, 1fr); /* Two images per row */
     }
-  }
-  
-  /* Adjustments for image sizes */
-  .image-1 {
-    grid-column: span 2; /* Larger image */
-    grid-row: span 2; /* Larger image */
-  }
-  
-  @media (max-width: 768px) {
+}
+
+
+/* Specific image adjustments */
+.image-1 {
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+@media (max-width: 768px) {
     .image-6 {
-      grid-column: span 2; /* Allow image 9 to span across 2 columns on smaller screens */
+        grid-column: span 2;
     }
-  }
-  
+}

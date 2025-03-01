@@ -1,0 +1,132 @@
+/* Basic styles for the schedule section */
+.schedule {
+    padding: 50px 20px;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #0f5e4d; /* Emerald green background */
+    color: #D2AB80;
+  }
+  
+  /* The vertical timeline line */
+  .timeline {
+    position: relative;
+    width: 2px; /* Thinner line */
+    background-color: #D2AB80; /* Light beige color */
+    margin: 0 auto; /* Center the timeline */
+  }
+  
+  /* Individual timeline item (touchpoint) */
+  .timeline-item {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+    position: relative;
+  }
+  
+  /* Timeline circle (touchpoint) */
+  .timeline-circle {
+    width: 15px; /* Smaller circle */
+    height: 15px;
+    background-color: transparent; /* Empty inside */
+    border: 3px solid #D2AB80; /* Beige border */
+    border-radius: 50%;
+    position: absolute;
+    left: -7px;
+    top: 0;
+    z-index: 2;
+  }
+  
+  /* Content box with text for the timeline items */
+  .timeline-content {
+    padding: 15px 30px;
+    border-radius: 8px;
+    width: 45%;
+  }
+  
+  /* Content on the left side */
+  .timeline-content.left {
+    margin-left: 100px;
+    text-align: left;
+  }
+  
+  /* Content on the right side */
+  .timeline-content.right {
+    margin-right: 100px;
+    text-align: right;
+  }
+  
+  /* Timeline images */
+  .timeline-image {
+    width: 45%;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .timeline-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Alternating text and image alignment */
+  .timeline-item:nth-child(odd) .timeline-content {
+    float: left;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-image {
+    float: right;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-content {
+    float: right;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-image {
+    float: left;
+  }
+  
+  /* Adjusting layout on mobile */
+  @media (max-width: 768px) {
+    .schedule {
+      padding: 20px 10px;
+    }
+  
+    .timeline {
+      width: 3px; /* Thinner line for mobile */
+    }
+  
+    .timeline-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .timeline-content,
+    .timeline-image {
+      width: 90%; /* Take up most of the width on small screens */
+    }
+  
+    .timeline-content.right,
+    .timeline-content.left {
+      margin-left: 0;
+      text-align: left;
+    }
+  
+    .timeline-circle {
+      left: 50%;
+      top: 0;
+    }
+  
+    /* Timeline image content changes on mobile */
+    .timeline-image {
+      width: 100%; /* Full width for images on mobile */
+      margin-bottom: 20px; /* Space between images and content */
+    }
+  
+    /* Remove timeline line for small screens */
+    .timeline {
+      display: none;
+    }
+  }
+  

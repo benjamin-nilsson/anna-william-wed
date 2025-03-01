@@ -92,7 +92,13 @@ function Rsvp() {
 
         {/* Skicka-knapp under båda stegarna */}
         <div className="rsvp-item item-5 checkbox-container">
-          <input type="checkbox" id="spex" name="spex" checked={formData.spex} onChange={handleChange} />
+          <input
+            type="checkbox"
+            id="spex"
+            name="spex"
+            checked={formData.spex}
+            onChange={handleChange}
+          />
           <label htmlFor="spex">Jag vill hålla spex eller tal</label>
         </div>
         <div className="rsvp-item item-6">

@@ -59,6 +59,20 @@
   font-size: 2.5rem;
 }
 
+/* Desktop: Ensure navbar items stay in one row */
+@media (min-width: 1024px) {
+  .nav-links {
+    flex-wrap: nowrap; /* Prevents items from wrapping */
+    gap: 3vw; /* Reduces spacing between menu items */
+    max-width: 1000px; /* Ensures it doesn’t get too wide */
+  }
+
+  .navbar {
+    max-width: 90%; /* Keeps navbar aligned and centered */
+  }
+}
+
+
 /* Mobile: Full-Screen Hamburger Menu */
 @media (max-width: 768px) {
   .menu-icon {

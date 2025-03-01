@@ -14,9 +14,12 @@ function DressCode() {
 
   {/* White & Green Circles */}
   <div className="circles-container">
-    <div className="circle bg-white"></div>
-    <div className="circle bg-green-500"></div>
-    <div className="circle bg-beige-500"></div>
+    <div className="circle bg-matcha"></div>
+    <div className="circle bg-pistashe"></div>
+    <div className="circle bg-carob"></div>
+    <div className="circle bg-almond"></div>
+    <div className="circle bg-chai"></div>
+    <div className="circle bg-vanilla"></div>
   </div>
 
   {/* Dress Code Examples Grid */}
