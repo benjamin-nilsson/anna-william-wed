@@ -1,8 +1,8 @@
 import "./DressCode.css";  // Import the DressCode.css file
-import InviteImage from "../../images/InviteImage.jpg";
+import BeigeSuit from "../../images/BeigeSuit.png";
 import SexyDress from "../../images/SexyDress.png";
 import GreenBowTie from "../../images/GreenBowTie.png";
-import GreenSuite from "../../images/GreenSuite.png";
+import BeigeDress from "../../images/BeigeDress.png";
 import SummerCouple from "../../images/SummerCouple.png";
 import SummerDress from "../../images/SummerDress.png";
 
@@ -16,6 +16,7 @@ function DressCode() {
   <div className="circles-container">
     <div className="circle bg-white"></div>
     <div className="circle bg-green-500"></div>
+    <div className="circle bg-beige-500"></div>
   </div>
 
   {/* Dress Code Examples Grid */}
@@ -23,8 +24,8 @@ function DressCode() {
     <img src={SummerCouple} className="image-1" alt="Dress example 1" />
     <img src={SexyDress} className="image-2" alt="Dress example 2" />
     <img src={GreenBowTie} className="image-3" alt="Dress example 3" />
-    <img src={GreenSuite} className="image-4" alt="Dress example 4" />
-    <img src={InviteImage} className="image-5" alt="Dress example 5" />
+    <img src={BeigeDress} className="image-4" alt="Dress example 4" />
+    <img src={BeigeSuit} className="image-5" alt="Dress example 5" />
     <img src={SummerDress} className="image-6" alt="Dress example 6" />
   </div>
 </section>
