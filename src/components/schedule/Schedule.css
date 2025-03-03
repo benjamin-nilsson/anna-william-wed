@@ -1,132 +1,131 @@
 /* Basic styles for the schedule section */
 .schedule {
-    padding: 50px 20px;
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #0f5e4d; /* Emerald green background */
-    color: #D2AB80;
-  }
-  
-  /* The vertical timeline line */
+  padding: 50px 20px;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #809671; /* Emerald green background */
+  color: #E5D2B8;
+  text-align: center; /* Center the title */
+}
+
+/* Center the schedule title */
+.schedule h1 {
+  text-align: center;
+}
+
+/* Ensure the timeline stays in the center */
+.timeline {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background-color: #E5D2B8;
+  height: 90%;
+}
+
+/* Timeline item styling */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  margin: 40px 0;
+}
+
+.timeline-content h3 {
+  font-size: 28px; /* Bigger headline */
+  font-weight: bold;
+  margin-bottom: 10px; /* Space between title and time */
+}
+
+.timeline-content p {
+  font-size: 18px; /* Slightly bigger text for readability */
+  margin-bottom: 5px; /* Adds spacing between time and description */
+}
+
+.timeline-content p:first-of-type {
+  font-weight: bold; /* Makes the time stand out */
+  font-size: 20px; /* Slightly larger for emphasis */
+}
+
+/* Circles for each event */
+.timeline-circle {
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px solid #E5D2B8;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Adjusting text and image containers */
+.timeline-content {
+  width: 40%;
+  padding: 15px;
+  background: transparent;
+}
+
+/* Timeline images */
+.timeline-image {
+  width: 40%;
+  padding: 15px;
+}
+
+.timeline-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; 
+  border-radius: 8px;
+}
+
+/* Alternating sides */
+.timeline-item:nth-child(odd) .timeline-content {
+  text-align: right;
+  order: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-image {
+  order: 2;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  text-align: left;
+  order: 2;
+}
+
+.timeline-item:nth-child(even) .timeline-image {
+  order: 1;
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
   .timeline {
-    position: relative;
-    width: 2px; /* Thinner line */
-    background-color: #D2AB80; /* Light beige color */
-    margin: 0 auto; /* Center the timeline */
+      display: none; /* Completely remove the timeline */
   }
-  
-  /* Individual timeline item (touchpoint) */
-  .timeline-item {
-    display: flex;
-    align-items: center;
-    margin: 40px 0;
-    position: relative;
-  }
-  
-  /* Timeline circle (touchpoint) */
+
   .timeline-circle {
-    width: 15px; /* Smaller circle */
-    height: 15px;
-    background-color: transparent; /* Empty inside */
-    border: 3px solid #D2AB80; /* Beige border */
-    border-radius: 50%;
-    position: absolute;
-    left: -7px;
-    top: 0;
-    z-index: 2;
+      display: none; /* Hide the dots */
   }
-  
-  /* Content box with text for the timeline items */
-  .timeline-content {
-    padding: 15px 30px;
-    border-radius: 8px;
-    width: 45%;
+
+  .timeline-item {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+      text-align: center;
   }
-  
-  /* Content on the left side */
-  .timeline-content.left {
-    margin-left: 100px;
-    text-align: left;
-  }
-  
-  /* Content on the right side */
-  .timeline-content.right {
-    margin-right: 100px;
-    text-align: right;
-  }
-  
-  /* Timeline images */
+
   .timeline-image {
-    width: 45%;
-    padding: 10px;
-    text-align: center;
+      order: 1; /* Image first */
+      width: 100%;
   }
-  
-  .timeline-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .timeline-content {
+      order: 2; /* Text below the image */
+      width: 100%;
+      padding-top: 10px; /* Add spacing between image and text */
   }
-  
-  /* Alternating text and image alignment */
-  .timeline-item:nth-child(odd) .timeline-content {
-    float: left;
-  }
-  
-  .timeline-item:nth-child(odd) .timeline-image {
-    float: right;
-  }
-  
-  .timeline-item:nth-child(even) .timeline-content {
-    float: right;
-  }
-  
-  .timeline-item:nth-child(even) .timeline-image {
-    float: left;
-  }
-  
-  /* Adjusting layout on mobile */
-  @media (max-width: 768px) {
-    .schedule {
-      padding: 20px 10px;
-    }
-  
-    .timeline {
-      width: 3px; /* Thinner line for mobile */
-    }
-  
-    .timeline-item {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .timeline-content,
-    .timeline-image {
-      width: 90%; /* Take up most of the width on small screens */
-    }
-  
-    .timeline-content.right,
-    .timeline-content.left {
-      margin-left: 0;
-      text-align: left;
-    }
-  
-    .timeline-circle {
-      left: 50%;
-      top: 0;
-    }
-  
-    /* Timeline image content changes on mobile */
-    .timeline-image {
-      width: 100%; /* Full width for images on mobile */
-      margin-bottom: 20px; /* Space between images and content */
-    }
-  
-    /* Remove timeline line for small screens */
-    .timeline {
-      display: none;
-    }
-  }
-  
+}

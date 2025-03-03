@@ -27,7 +27,7 @@
 h2 {
     font-size: 2rem;
     font-weight: 600;
-    color: #0f5e4d;
+    color: #809671;
     z-index: 10;
     position: relative;
     margin-top: 2rem;
@@ -35,7 +35,7 @@ h2 {
 
 .description {
     font-size: 1.25rem;
-    color: #0f5e4d;
+    color: #809671;
     margin-top: 0.5rem;
     z-index: 10;
     position: relative;

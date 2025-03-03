@@ -75,8 +75,8 @@ html, body {
 /* Hover Effect */
 .invite-button:hover {
   background-color: rgba(255, 255, 255, 0.1); /* Slight white background on hover */
-  color: #0d4a3c; /* Ensure text stays white */
-  border-color: #0d4a3c; /* Change border color on hover */
+  color: #809671; /* Ensure text stays white */
+  border-color: #809671; /* Change border color on hover */
 }
 
 /* Section Styling */
@@ -98,7 +98,7 @@ html, body {
 /* RSVP Section with Diagonal Cut */
 .rsvp-section {
   height: 50vh;
-  background-color: #0f5e4d;
+  background-color: #809671;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -200,7 +200,7 @@ html, body {
   border: none;
   border-radius: 6px;
   background-color: white;
-  color: #0f5e4d;
+  color: #809671;
   cursor: pointer;
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
   font-family: 'Lora', serif;
@@ -209,7 +209,7 @@ html, body {
 
 .rsvp-item button:hover {
   background-color: #e0e0e0;
-  color: #0d4a3c;
+  color: #809671;
 }
 
 /* Responsive RSVP Section */
