@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Schedule.css";
 import Food from "../../images/food.png";
 import Church from "../../images/Church.png";
@@ -7,75 +7,75 @@ import Dessert from "../../images/Dessert.png";
 import Dance from "../../images/Dance.png";
 
 function Schedule() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const events = [
+    { title: "Ceremoni", time: "11:00", desc: "Vigsel.", img: Church },
+    { title: "Mingel Timme", time: "13:00", desc: "Description of event 2.", img: Mingle },
+    { title: "Huvudmiddagen", time: "14:00", desc: "Description of event 3.", img: Food },
+    { title: "Efterrätt och Drinkar", time: "17:00", desc: "Description of event 4.", img: Dessert },
+    { title: "Fest & Dans", time: "20:00", desc: "Description of event 5.", img: Dance },
+  ];
+
   return (
     <section className="schedule">
       <h1>Schedule</h1>
       <div className="timeline"></div>
 
-      {/* Event 1 */}
-      <div className="timeline-item">
-        <div className="timeline-circle"></div>
-        <div className="timeline-content">
-          <h3>Ceremoni</h3>
-          <p>11:00</p>
-          <p>Vigsel.</p>
-        </div>
-        <div className="timeline-image">
-          <img src={Church} alt="Event 1" />
-        </div>
-      </div>
+      {events.map((event, index) => (
+        <div className="timeline-item" key={index}>
+          <div className="timeline-circle"></div>
 
-      {/* Event 2 */}
-      <div className="timeline-item">
-        <div className="timeline-circle"></div>
-        <div className="timeline-image">
-          <img src={Mingle} alt="Event 2" />
+          {isMobile ? (
+            <>
+              {/* Mobile: Text First, Image Second */}
+              <div className="timeline-content">
+                <h3>{event.title}</h3>
+                <p>{event.time}</p>
+                <p>{event.desc}</p>
+              </div>
+              <div className="timeline-image">
+                <img src={event.img} alt={event.title} />
+              </div>
+            </>
+          ) : (
+            <>
+              {/* Desktop: Keep Alternating Layout */}
+              {index % 2 === 0 ? (
+                <>
+                  <div className="timeline-content">
+                    <h3>{event.title}</h3>
+                    <p>{event.time}</p>
+                    <p>{event.desc}</p>
+                  </div>
+                  <div className="timeline-image">
+                    <img src={event.img} alt={event.title} />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="timeline-image">
+                    <img src={event.img} alt={event.title} />
+                  </div>
+                  <div className="timeline-content">
+                    <h3>{event.title}</h3>
+                    <p>{event.time}</p>
+                    <p>{event.desc}</p>
+                  </div>
+                </>
+              )}
+            </>
+          )}
         </div>
-        <div className="timeline-content">
-          <h3>Mingel Timme</h3>
-          <p>13:00</p>
-          <p>Description of event 2.</p>
-        </div>
-      </div>
-
-      {/* Event 3 */}
-      <div className="timeline-item">
-        <div className="timeline-circle"></div>
-        <div className="timeline-content">
-          <h3>Huvudmiddagen</h3>
-          <p>14:00</p>
-          <p>Description of event 3.</p>
-        </div>
-        <div className="timeline-image">
-          <img src={Food} alt="Event 3" />
-        </div>
-      </div>
-
-      {/* Event 4 */}
-      <div className="timeline-item">
-        <div className="timeline-circle"></div>
-        <div className="timeline-image">
-          <img src={Dessert} alt="Event 4" />
-        </div>
-        <div className="timeline-content">
-          <h3>Efterrätt och Drinkar</h3>
-          <p>17:00</p>
-          <p>Description of event 4.</p>
-        </div>
-      </div>
-
-      {/* Event 5 */}
-      <div className="timeline-item">
-        <div className="timeline-circle"></div>
-        <div className="timeline-content">
-          <h3>Fest & Dans</h3>
-          <p>20:00</p>
-          <p>Description of event 5.</p>
-        </div>
-        <div className="timeline-image">
-          <img src={Dance} alt="Event 5" />
-        </div>
-      </div>
+      ))}
     </section>
   );
 }

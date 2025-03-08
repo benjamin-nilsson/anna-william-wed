@@ -36,7 +36,7 @@ html, body {
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: #E5D2B8;
   text-align: center;
   padding: 2rem;
 }
@@ -63,8 +63,8 @@ html, body {
 .invite-button {
   margin-top: 1.5rem;
   background-color: transparent; /* Transparent background */
-  color: white; /* White text */
-  border: 2px solid white; /* White border */
+  color: #E5D2B8; /* White text */
+  border: 2px solid #E5D2B8; /* White border */
   padding: 12px 24px;
   font-size: 1rem;
   cursor: pointer;
