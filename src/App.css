@@ -82,7 +82,7 @@ html, body {
 /* Section Styling */
 .section {
   width: 100%;
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 4rem 2rem;
 }
 

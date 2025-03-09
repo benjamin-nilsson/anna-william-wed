@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import DressCode from "../dress_code/DressCode";
 import Schedule from "../schedule/Schedule";
 import Menu from "../food_drink/Menu";
 import Rsvp from "../rsvp/Rsvp";
+import Wishlist from "../wishlist/Wishlist";
 import InviteImage from "../../images/InviteImage.jpg";
 
 function Invite() {
@@ -40,8 +40,8 @@ function Invite() {
       </div>
 
       {/* Gift List Link */}
-      <div className="text-center mt-10">
-        <Link to="/gifts" className="text-blue-600 text-xl underline">View Gift List</Link>
+      <div id="Wishlist" className="section bg-white">
+        <Wishlist />
       </div>
     </div>
   );

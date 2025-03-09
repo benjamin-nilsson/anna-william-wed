@@ -93,8 +93,22 @@ const Wishlist = () => {
 
       {showForm && (
         <form className="wishlist-form" onSubmit={handleAddItem}>
-          <input type="text" name="title" placeholder="Title" value={newItem.title} onChange={handleChange} required />
-          <input type="url" name="url" placeholder="URL" value={newItem.url} onChange={handleChange} required />
+          <input
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={newItem.title}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="url"
+            name="url"
+            placeholder="URL"
+            value={newItem.url}
+            onChange={handleChange}
+            required
+          />
           <input type="file" accept="image/*" onChange={handleImageChange} required />
           <button type="submit">Add</button>
         </form>
@@ -108,10 +122,12 @@ const Wishlist = () => {
             </div>
             <div className="wishlist-details">
               <h3 className="wishlist-title">{item.title}</h3>
-              <a href={item.url} target="_blank" rel="noopener noreferrer">{item.url}</a>
+              <button onClick={() => window.open(item.url, "_blank")}>Gå till sidan</button>
               <div className="button-container">
-                <button className={`status-btn ${item.taken ? "untake-btn" : "mark-taken-btn"}`} 
-                        onClick={() => handleMarkAsTaken(item.id, item.taken)}>
+                <button
+                  className={`status-btn ${item.taken ? "untake-btn" : "mark-taken-btn"}`}
+                  onClick={() => handleMarkAsTaken(item.id, item.taken)}
+                >
                   {item.taken ? "Unselect item" : "Select item as taken"}
                 </button>
               </div>

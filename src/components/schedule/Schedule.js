@@ -27,7 +27,7 @@ function Schedule() {
 
   return (
     <section className="schedule">
-      <h1>Schedule</h1>
+      <h1>Schema</h1>
       <div className="timeline"></div>
 
       {events.map((event, index) => (
