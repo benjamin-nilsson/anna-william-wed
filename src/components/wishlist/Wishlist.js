@@ -1,118 +1,125 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '../../database/firebase'; // Assuming firebase.js is already set up
-import { collection, updateDoc, doc, getDocs } from 'firebase/firestore';
+import React, { useState, useEffect } from "react";
+import { db, storage } from "../../database/firebase";
+import { collection, addDoc, getDocs, updateDoc, doc } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import "./Wishlist.css";
 
 const Wishlist = () => {
   const [items, setItems] = useState([]);
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [name, setName] = useState('');
-  const [showModal, setShowModal] = useState(false);
-  const [isCanceling, setIsCanceling] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [newItem, setNewItem] = useState({ title: "", url: "", image: null });
 
-  // Fetch wishlist items from Firestore
   useEffect(() => {
     const fetchItems = async () => {
-      const querySnapshot = await getDocs(collection(db, 'wishlist'));
-      const wishlistItems = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const querySnapshot = await getDocs(collection(db, "wishlist"));
+      const wishlistItems = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
       setItems(wishlistItems);
     };
     fetchItems();
   }, []);
 
-  // Mark an item as taken
-  const markAsTaken = (item) => {
-    setSelectedItem(item);
-    setShowModal(true);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNewItem((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Mark an item as not taken (cancel)
-  const cancelItem = async (item) => {
-    const itemRef = doc(db, 'wishlist', item.id);
-    await updateDoc(itemRef, { taken: false, takenBy: '' });
-    setItems((prevItems) => prevItems.map((i) => (i.id === item.id ? { ...i, taken: false, takenBy: '' } : i)));
+  const handleImageChange = (e) => {
+    if (e.target.files[0]) {
+      setNewItem((prev) => ({ ...prev, image: e.target.files[0] }));
+    }
   };
 
-  // Handle form submission
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (!name || !selectedItem) return;
+  const handleAddItem = async (e) => {
+    e.preventDefault();
 
-    // Add user's name to the item and mark as taken
-    const itemRef = doc(db, 'wishlist', selectedItem.id);
-    await updateDoc(itemRef, { taken: true, takenBy: name });
+    if (!newItem.title || !newItem.url || !newItem.image) {
+      alert("Please fill all fields and select an image.");
+      return;
+    }
 
-    // Update state
-    setItems((prevItems) => prevItems.map((item) =>
-      item.id === selectedItem.id ? { ...item, taken: true, takenBy: name } : item
-    ));
+    try {
+      const imageRef = ref(storage, `wishlist/${newItem.image.name}`);
+      await uploadBytes(imageRef, newItem.image);
+      const imageUrl = await getDownloadURL(imageRef);
 
-    setShowModal(false);
-    setName('');
+      const docRef = await addDoc(collection(db, "wishlist"), {
+        title: newItem.title,
+        url: newItem.url,
+        image: imageUrl,
+        taken: false,
+      });
+
+      setItems([
+        ...items,
+        { id: docRef.id, title: newItem.title, url: newItem.url, image: imageUrl, taken: false },
+      ]);
+      setNewItem({ title: "", url: "", image: null });
+      setShowForm(false);
+    } catch (error) {
+      console.error("Error adding item: ", error);
+    }
+  };
+
+  const handleMarkAsTaken = async (id, taken) => {
+    const confirmAction = window.confirm(
+      taken ? "Do you want to unselect this item?" : "Do you want to select this item?"
+    );
+    if (!confirmAction) return;
+
+    try {
+      const itemRef = doc(db, "wishlist", id);
+      await updateDoc(itemRef, { taken: !taken });
+
+      setItems((prevItems) =>
+        prevItems.map((item) =>
+          item.id === id ? { ...item, taken: !taken } : item
+        )
+      );
+    } catch (error) {
+      console.error("Error updating item status: ", error);
+    }
   };
 
   return (
-    <div>
-      <h2>Wishlist</h2>
+    <section className="wishlist-section">
+      <h2 className="wishlist-header">Wishlist</h2>
 
-      {/* Wishlist Items */}
-      <div className="wishlist-items">
+      <button className="add-item-btn" onClick={() => setShowForm(!showForm)}>
+        {showForm ? "Close" : "Add Item"}
+      </button>
+
+      {showForm && (
+        <form className="wishlist-form" onSubmit={handleAddItem}>
+          <input type="text" name="title" placeholder="Title" value={newItem.title} onChange={handleChange} required />
+          <input type="url" name="url" placeholder="URL" value={newItem.url} onChange={handleChange} required />
+          <input type="file" accept="image/*" onChange={handleImageChange} required />
+          <button type="submit">Add</button>
+        </form>
+      )}
+
+      <div className="wishlist-container">
         {items.map((item) => (
-          <div key={item.id} className="wishlist-item">
-            <img src={item.image} alt={item.title} />
-            <div className="item-details">
-              <h3>{item.title}</h3>
+          <div key={item.id} className={`wishlist-item ${item.taken ? "taken" : ""}`}>
+            <div className="image-container">
+              <img src={item.image} alt={item.title} className="wishlist-image" />
+            </div>
+            <div className="wishlist-details">
+              <h3 className="wishlist-title">{item.title}</h3>
               <a href={item.url} target="_blank" rel="noopener noreferrer">{item.url}</a>
-              <div className="actions">
-                {!item.taken ? (
-                  <button onClick={() => markAsTaken(item)}>Mark as Taken</button>
-                ) : (
-                  <div>
-                    <span>Taken by {item.takenBy}</span>
-                    <button onClick={() => cancelItem(item)}>Cancel</button>
-                  </div>
-                )}
+              <div className="button-container">
+                <button className={`status-btn ${item.taken ? "untake-btn" : "mark-taken-btn"}`} 
+                        onClick={() => handleMarkAsTaken(item.id, item.taken)}>
+                  {item.taken ? "Unselect item" : "Select item as taken"}
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
-
-      {/* Modal for Marking Item as Taken */}
-      {showModal && !isCanceling && (
-        <div className="modal">
-          <div className="modal-content">
-            <h3>Mark {selectedItem.title} as Taken</h3>
-            <form onSubmit={handleSubmit}>
-              <label>Your Name</label>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-              <div className="modal-actions">
-                <button type="submit">Send</button>
-                <button type="button" onClick={() => setShowModal(false)}>Cancel</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
-
-      {/* Modal for Canceling the Item */}
-      {isCanceling && (
-        <div className="modal">
-          <div className="modal-content">
-            <h3>Cancel {selectedItem.title}?</h3>
-            <p>This will deselect the item and remove it from the database.</p>
-            <div className="modal-actions">
-              <button onClick={() => cancelItem(selectedItem)}>Yes, Cancel</button>
-              <button onClick={() => setIsCanceling(false)}>No, Keep</button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+    </section>
   );
 };
 
