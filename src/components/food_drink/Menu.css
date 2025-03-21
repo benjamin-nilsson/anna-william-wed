@@ -136,20 +136,12 @@
     }
   
     .drinks-grid {
-      flex-direction: row; /* Keep drinks in one row */
-      justify-content: center; /* Align to the left */
-      gap: 10px; /* Adjusted gap between drink boxes */
-      overflow-x: auto; /* Allows scrolling */
-    }
-  
-    /* Add a border on top of the first drink item */
-    .drinks-grid .drink-box:first-child {
-      border-top: 2px solid #E5D2B8; /* Top border for the first drink */
-    }
-  
-    /* This part adds the border under each drink in mobile view */
-    .drink-box {
-      margin-bottom: 10px; /* Adds space below each drink box */
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Two drinks per row */
+      gap: 10px; /* Space between items */
+      justify-items: center;
+      align-items: center;
+      width: 80%;
     }
   }
   

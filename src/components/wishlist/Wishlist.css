@@ -1,138 +1,66 @@
-/* Basic styles for the wishlist section */
-.wishlist-section {
-  background: #809671;
-  border-radius: 8px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-
-  /* Make it take the full height */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-bottom: 60px;
-}
-
-section {
-  min-height: 50vh;
-}
-
-.wishlist-header {
-  color: #E5D2B8;
-}
-
-/* Add Button */
-.add-item-btn {
-  background-color: transparent; /* Transparent background */
-  color: #E5D2B8;
-  border: 3px solid #E5D2B8; /* White border */
-  padding: 10px 25px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 1.5rem;
-  border-radius: 0; /* Remove rounded corners for sharp edges */
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-}
-
-.add-item-btn:hover {
-  background-color: #0056b3;
-}
-
-/* Form for adding items */
-.wishlist-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.wishlist-form input {
-  padding: 10px;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.wishlist-form button {
-  background-color: #E5D2B8; /* Transparent background */
-  color: #809671;
-  border: 3px solid #E5D2B8; /* White border */
-  padding: 10px 25px;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 0; /* Remove rounded corners for sharp edges */
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-}
-
-.wishlist-form button:hover {
-  background-color: #0056b3;
-}
-
-/* Wishlist container for 3 columns */
+/* Wishlist container: 3 columns on desktop, 1 on mobile */
 .wishlist-container {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
-  gap: 20px; /* Space between items */
+  gap: 20px;
   width: 100%;
   padding: 20px;
 }
 
-/* Each wishlist item */
 .wishlist-item {
   display: flex;
-  flex-direction: row; /* Image on the left, title and button on the right */
-  align-items: center;
-  padding: 15px;
-  border: 1px solid #ddd;
+  flex-direction: row;
+  align-items: stretch; /* Make sure everything stretches evenly */
+  padding: 0; /* Remove extra padding */
   border-radius: 8px;
-  background-color: #E5D2B8;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f4; /* Neutral background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  height: 120px; /* Fixed height for uniformity */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
-/* Image container */
+.wishlist-item:hover {
+  transform: translateY(-10px); /* Slight "pop out" effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly bigger shadow on hover */
+}
+
 .image-container {
   width: 150px;
-  height: 100px;
+  height: 100%;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f5;
+  background-color: #e0e0e0; /* Light grey for the image background */
+  flex-shrink: 0; /* Prevents shrinking */
 }
 
 .wishlist-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensures image fully stretches inside container */
 }
 
-/* Title and button on the right */
 .wishlist-details {
-  padding-left: 15px; /* Space between image and text */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   text-align: left;
   width: 100%;
+  padding: 10px;
 }
 
 .wishlist-details h3 {
   margin: 0;
   font-size: 16px;
   font-weight: bold;
+  color: #333; /* Darker grey for title */
 }
 
 .wishlist-details button {
-  background-color: #809671;
+  background-color: #4caf50; /* Soft green button */
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -144,7 +72,32 @@ section {
 }
 
 .wishlist-details button:hover {
-  background-color: #0056b3;
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.status-btn {
+  background-color: #f1f1f1; /* Light grey for status buttons */
+  color: #4caf50; /* Green for status text */
+  border: 2px solid #f1f1f1;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.status-btn:hover {
+  background-color: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
 }
 
 /* Taken item styling */
@@ -152,34 +105,30 @@ section {
   opacity: 0.6;
 }
 
-/* Mobile Responsiveness */
+/* Mobile Optimization: Switch to 1 column */
 @media (max-width: 768px) {
   .wishlist-container {
-    grid-template-columns: 1fr 1fr; /* Stack 2 columns on smaller screens */
+    grid-template-columns: 1fr; /* Show 1 item per row on smaller screens */
   }
 
   .wishlist-item {
-    flex-direction: column; /* Stack image above title and button on mobile */
-    align-items: center;
+    flex-direction: row; /* Keep the same row structure */
+    height: 120px; /* Keep balance */
   }
 
   .image-container {
-    width: 100%;
-    height: 200px; /* Adjust the height of the image container on mobile */
+    width: 120px;
+    height: 100%;
   }
 
   .wishlist-details {
-    width: 100%;
-    padding-left: 0;
-    text-align: center;
-  }
-
-  .wishlist-details h3 {
-    font-size: 14px;
+    padding: 8px;
   }
 
   .button-container {
-    flex-direction: column; /* Stack buttons vertically */
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
     gap: 10px;
   }
 }
