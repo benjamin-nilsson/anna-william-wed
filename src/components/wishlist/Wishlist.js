@@ -85,7 +85,7 @@ const Wishlist = () => {
 
   return (
     <section className="wishlist-section">
-      <h2 className="wishlist-header">Wishlist</h2>
+      <h2 className="wishlist-header">Önskelista</h2>
 
       <button className="add-item-btn" onClick={() => setShowForm(!showForm)}>
         {showForm ? "Close" : "Add Item"}

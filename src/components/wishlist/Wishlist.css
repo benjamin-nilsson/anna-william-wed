@@ -1,134 +1,122 @@
-/* Wishlist container: 3 columns on desktop, 1 on mobile */
+/* Centering and structuring the wishlist */
 .wishlist-container {
-  display: grid;
+  display: flex;
   justify-content: center;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
-  gap: 20px;
-  width: 100%;
+  flex-wrap: wrap;
   padding: 20px;
 }
 
+/* Wishlist item structure with alternating colors */
 .wishlist-item {
   display: flex;
-  flex-direction: row;
-  align-items: stretch; /* Make sure everything stretches evenly */
-  padding: 0; /* Remove extra padding */
-  border-radius: 8px;
-  background-color: #f4f4f4; /* Neutral background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-  height: 120px; /* Fixed height for uniformity */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-}
-
-.wishlist-item:hover {
-  transform: translateY(-10px); /* Slight "pop out" effect on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly bigger shadow on hover */
-}
-
-.image-container {
-  width: 150px;
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-color: #e0e0e0; /* Light grey for the image background */
-  flex-shrink: 0; /* Prevents shrinking */
+  padding: 15px;
+  width: 200px;
+  height: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.wishlist-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures image fully stretches inside container */
+/* Alternating background colors for distinction */
+.wishlist-item:nth-child(odd) {
+  background-color: #f0f0f0; /* Light gray */
 }
 
+.wishlist-item:nth-child(even) {
+  background-color: #e6e6e6; /* Slightly darker gray */
+}
+
+/* Title placement */
+.wishlist-header {
+  text-align: left;
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Hover effect */
+.wishlist-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure button placement remains under image */
 .wishlist-details {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
-  text-align: left;
+  text-align: center;
   width: 100%;
   padding: 10px;
 }
 
-.wishlist-details h3 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #333; /* Darker grey for title */
+/* Image container - oblong (portrait-style) */
+.image-container {
+  width: 180px; /* Narrower width */
+  height: 260px; /* Taller height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px; /* More rounded for a sleek look */
+  overflow: hidden;
 }
 
-.wishlist-details button {
-  background-color: #4caf50; /* Soft green button */
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.wishlist-image {
+  width: 100%; /* Ensures it fills the container */
+  height: auto;
+  object-fit: cover; /* Crops excess while keeping aspect ratio */
+}
+
+.wishlist-title {
+  border-top: 1px solid #E0E0E0;
+  font-size: 16px;
   font-weight: 600;
-  font-size: 14px;
-  transition: background 0.3s ease-in-out;
+  color: #333;
+  padding-top: 6px;
+  margin: 12px 0;
+  width: 100%;
+  justify-content: start;
+  align-items: start;
+}
+
+/* Modern button styling */
+.wishlist-details button {
+  background-color: #e0e0e0; /* Neutral modern color */
+  color: #333;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .wishlist-details button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #d6d6d6;
+  color: #222;
 }
 
+/* Button container for "mark as taken" */
 .button-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
-  justify-content: space-between;
   gap: 10px;
-}
-
-.status-btn {
-  background-color: #f1f1f1; /* Light grey for status buttons */
-  color: #4caf50; /* Green for status text */
-  border: 2px solid #f1f1f1;
-  padding: 10px 15px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 5px;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-}
-
-.status-btn:hover {
-  background-color: #4caf50;
-  color: #fff;
-  border-color: #4caf50;
+  margin-top: 10px;
 }
 
 /* Taken item styling */
 .taken {
-  opacity: 0.6;
+  background-color: #ebebeb; /* Subtle gray */
+  opacity: 0.7;
 }
 
-/* Mobile Optimization: Switch to 1 column */
+/* Responsive - Mobile */
 @media (max-width: 768px) {
   .wishlist-container {
-    grid-template-columns: 1fr; /* Show 1 item per row on smaller screens */
-  }
-
-  .wishlist-item {
-    flex-direction: row; /* Keep the same row structure */
-    height: 120px; /* Keep balance */
-  }
-
-  .image-container {
-    width: 120px;
-    height: 100%;
-  }
-
-  .wishlist-details {
-    padding: 8px;
-  }
-
-  .button-container {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    gap: 10px;
+    grid-template-columns: 1fr;
   }
 }
