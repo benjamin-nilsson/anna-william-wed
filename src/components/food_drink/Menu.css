@@ -21,7 +21,7 @@
   
   .menu-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-template-columns: repeat(3, 1fr); /* 4 equal columns */
     width: 90%;
     gap: 20px; /* Adds space between columns */
     margin-bottom: 40px;
@@ -100,7 +100,7 @@
     border-radius: 8px;
     text-align: center;
     width: 100px; /* Fixed width for each drink box */
-    height: 40px; /* Fixed height for drink box */
+    height: 50px; /* Fixed height for drink box */
     display: flex;
     justify-content: center;
     align-items: center;

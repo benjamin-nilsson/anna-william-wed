@@ -79,13 +79,7 @@ function Rsvp() {
               />
             </div>
             <div className="rsvp-item item-3">
-              <label>Boendesituation</label>
-              <select name="accommodation" value={formData.accommodation} onChange={handleChange}>
-                <option>Har fixat boende</option>
-                <option>Behöver boende</option>
-                <option>Åker hem samma kväll</option>
-                <option>Kommer inte</option>
-              </select>
+              <label>Boende rekommendationer</label>
             </div>
           </div>
         </div>
@@ -99,8 +93,28 @@ function Rsvp() {
             checked={formData.spex}
             onChange={handleChange}
           />
-          <label htmlFor="spex">Jag vill hålla spex eller tal</label>
+          <label htmlFor="spex">Jag vill hålla spex (burdparet uppmanar till mycket spex)</label>
+          <div className="rsvp-item item-6">
+          <label>Beskriva gärna ditt spex om du har ett hum om den?</label>
+          <textarea
+            placeholder="Skriv dina frågor här..."
+            name="questions"
+            value={formData.questions}
+            onChange={handleChange}
+          ></textarea>
         </div>
+        </div>
+        <div className="rsvp-item item-5 checkbox-container">
+          <input
+            type="checkbox"
+            id="spex"
+            name="spex"
+            checked={formData.spex}
+            onChange={handleChange}
+          />
+          <label htmlFor="spex">Jag vill hålla tal (håll gärna ert tall under 5 minuter)</label>
+        </div>
+        <p>Kontaka gärna mail om du har frågor kring tal och spex</p>
         <div className="rsvp-item item-6">
           <label>Frågor?</label>
           <textarea

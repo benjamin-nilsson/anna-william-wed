@@ -5,32 +5,29 @@ import Dessert from "../../images/Dessert.png";
 
 const foodData = [
   {
-    title: "Appetizers",
-    foods: ["Bruschetta", "Stuffed Mushrooms", "Garlic Bread"],
+    title: "Förrätt",
+    foods: ["Meze (ost, salami, kycklingfilé, feta ost, nötter)",],
     foodImage: Food,
   },
   {
-    title: "Main Courses",
-    foods: ["Grilled Salmon", "Pasta Primavera", "Steak"],
+    title: "Huvudrätt",
+    foods: ["Shopska sallad & Dressing, Grön sallad med hallomi & granat äpple, Rödbetssallad, Bulgarisk potatissallad", "Västerbottenpaj", "Grillad kycklingfilé med potatisgratäng", "Fläskfilé marinerat med vitlök tillsammans med kantareller", "Kallrökt lax & kokt potatis", "Brunsås, Vingegretssås, honungsenapsdressing"],
     foodImage: Dessert,
   },
   {
-    title: "Desserts",
-    foods: ["Tiramisu", "Cheesecake", "Chocolate Lava Cake"],
+    title: "Dessert",
+    foods: ["Glutenfri brownie", "Fruktbricka", "Tårtbuffé", "Créme bulle"],
     foodImage: Food,
-  },
-  {
-    title: "Specials",
-    foods: ["Lobster Risotto", "Duck Confit", "Wagyu Burger"],
-    foodImage: Dessert,
   },
 ];
 
 const drinkData = [
-  { name: "Mojito" },
-  { name: "Lemonade" },
-  { name: "Iced Tea" },
-  { name: "Red Wine" },
+  { name: "Alkohållfri Champagne" },
+  { name: "Herrljunga Cider" },
+  { name: "Fläder Saft" },
+  { name: "Rakija" },
+  { name: "Öl" },
+  { name: "Fanta & Coca Cola" }
 ];
 
 const Menu = () => {

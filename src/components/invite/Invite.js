@@ -11,10 +11,11 @@ function Invite() {
       {/* Hero Section */}
       <div className="invite-section" style={{ backgroundImage: `url(${InviteImage})` }}>
         <div className="invite-overlay">
-          <h1 className="invite-title">William & Anastasia Bröllop</h1>
-          <p className="invite-text">Welcome to our special day!</p>
+          <h2 className="invite-intro">Välkommen till</h2>
+          <h1 className="invite-title">William & Anastasias Bröllop</h1>
+          <p className="invite-text">26 juni 2025 | Göteborg</p>
           <button className="invite-button" onClick={() => document.getElementById("rsvp").scrollIntoView({ behavior: 'smooth' })}>
-            RSVP Now
+            OSA
           </button>
         </div>
       </div>
@@ -40,7 +41,7 @@ function Invite() {
       </div>
 
       {/* Gift List Link */}
-      <div id="Wishlist" className="section bg-white">
+      <div id="wishlist" className="section bg-white">
         <Wishlist />
       </div>
     </div>

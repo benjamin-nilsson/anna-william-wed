@@ -24,12 +24,12 @@ function Navbar() {
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       {/* Centered Menu */}
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <li><Link to="/" onClick={handleNavLinkClick}>Hem</Link></li>
+        <li><Link to="/" onClick={handleNavLinkClick}>W&A</Link></li>
         <li><a href="#dresscode" onClick={handleNavLinkClick}>Dresscode</a></li>
         <li><a href="#schedule" onClick={handleNavLinkClick}>Schema</a></li>
-        <li><a href="#menu" onClick={handleNavLinkClick}>Mat & Dryck</a></li>
+        <li><a href="#menu" onClick={handleNavLinkClick}>Meny</a></li>
         <li><a href="#rsvp" onClick={handleNavLinkClick}>RSVP</a></li>
-        <li><Link to="/gifts" onClick={handleNavLinkClick}>Gåvor</Link></li>
+        <li><a href="#wishlist" onClick={handleNavLinkClick}>Gåvor</a></li>
       </ul>
 
       {/* Hamburger Menu Icon */}

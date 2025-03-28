@@ -65,7 +65,7 @@ const Wishlist = () => {
 
   const handleMarkAsTaken = async (id, taken) => {
     const confirmAction = window.confirm(
-      taken ? "Do you want to unselect this item?" : "Do you want to select this item?"
+      taken ? "Vill du avmarkera produkten?" : "Vill du välja produkten?"
     );
     if (!confirmAction) return;
 
@@ -84,12 +84,14 @@ const Wishlist = () => {
   };
 
   return (
-    <section className="wishlist-section">
+    <section className="section">
       <h2 className="wishlist-header">Önskelista</h2>
 
-      <button className="add-item-btn" onClick={() => setShowForm(!showForm)}>
-        {showForm ? "Close" : "Add Item"}
-      </button>
+      <div className="add-item-container">
+        <button className="add-item-btn" onClick={() => setShowForm(!showForm)}>
+          {showForm ? "Close" : "Add Item"}
+        </button>
+      </div>
 
       {showForm && (
         <form className="wishlist-form" onSubmit={handleAddItem}>
@@ -128,7 +130,7 @@ const Wishlist = () => {
                   className={`status-btn ${item.taken ? "untake-btn" : "mark-taken-btn"}`}
                   onClick={() => handleMarkAsTaken(item.id, item.taken)}
                 >
-                  {item.taken ? "Unselect item" : "Select item as taken"}
+                  {item.taken ? "Avmarkera" : "Markera som tagen"}
                 </button>
               </div>
             </div>
