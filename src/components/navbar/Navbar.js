@@ -25,7 +25,7 @@ function Navbar() {
       {/* Centered Menu */}
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <li><Link to="/" onClick={handleNavLinkClick}>W&A</Link></li>
-        <li><a href="#dresscode" onClick={handleNavLinkClick}>Dresscode</a></li>
+        <li><a href="#dresscode" onClick={handleNavLinkClick}>Klädkod</a></li>
         <li><a href="#schedule" onClick={handleNavLinkClick}>Schema</a></li>
         <li><a href="#menu" onClick={handleNavLinkClick}>Meny</a></li>
         <li><a href="#rsvp" onClick={handleNavLinkClick}>RSVP</a></li>

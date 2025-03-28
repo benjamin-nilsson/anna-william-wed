@@ -9,7 +9,7 @@ import SummerDress from "../../images/SummerDress.png";
 function DressCode() {
   return (
 <section className="full-screen p-10 text-center">
-  <h2 className="text-3xl font-semibold">Kläd Kod</h2>
+  <h2 className="text-3xl font-semibold">Klädkod</h2>
   <p className="description">Dessa färger kommer vara bröllopets tema, och nedan ser du exempel om du vill matcha temat, men man får självklart komma hur man vill</p>
 
   {/* White & Green Circles */}
