@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { db } from "../../database/firebase"; // Import Firebase setup
 import { collection, addDoc } from "firebase/firestore";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 function Rsvp() {
   const [formData, setFormData] = useState({
@@ -41,9 +42,27 @@ function Rsvp() {
     }
   };
 
+  const mapContainerStyle = {
+    width: "100%",
+    height: "300px",
+    borderRadius: "8px",
+    marginTop: "20px"
+  };
+  
+  const center = {
+    lat: 58.3693659, // Replace with the correct latitude
+    lng: 13.8228831  // Replace with the correct longitude
+  };
+
   return (
     <section id="rsvp" className="rsvp-section">
-      <h2 className="rsvp-title">RSVP</h2>
+      <h2 className="rsvp-title">OSA</h2>
+      <h3 className="map-header">Plats</h3>
+      <LoadScript googleMapsApiKey="AIzaSyCJg4ig0r-opZPKFbb1NvZL2dSsAoaXU8c">
+        <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={15}>
+          <Marker position={center} />
+        </GoogleMap>
+      </LoadScript>
       <form className="rsvp-form" onSubmit={handleSubmit}>
         <div className="rsvp-columns">
           {/* Första stegen */}
@@ -78,9 +97,6 @@ function Rsvp() {
                 onChange={handleChange}
               />
             </div>
-            <div className="rsvp-item item-3">
-              <label>Boende rekommendationer</label>
-            </div>
           </div>
         </div>
 
@@ -95,9 +111,9 @@ function Rsvp() {
           />
           <label htmlFor="spex">Jag vill hålla spex (burdparet uppmanar till mycket spex)</label>
           <div className="rsvp-item item-6">
-          <label>Beskriva gärna ditt spex om du har ett hum om den?</label>
+          <label>Beskriva gärna ditt spex om du har ett hum om vad den kommer handla om?</label>
           <textarea
-            placeholder="Skriv dina frågor här..."
+            placeholder="Spex idé..."
             name="questions"
             value={formData.questions}
             onChange={handleChange}

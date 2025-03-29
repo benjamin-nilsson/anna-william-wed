@@ -223,6 +223,14 @@ html, body {
   color: #809671;
 }
 
+.map-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  color: white;
+}
+
 /* Responsive RSVP Section */
 @media (max-width: 768px) {
   .invite-intro {

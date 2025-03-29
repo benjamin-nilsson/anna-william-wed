@@ -3,7 +3,7 @@ import Schedule from "../schedule/Schedule";
 import Menu from "../food_drink/Menu";
 import Rsvp from "../rsvp/Rsvp";
 import Wishlist from "../wishlist/Wishlist";
-import InviteImage from "../../images/InviteImage.jpg";
+import InviteImage from "../../images/Home.png";
 
 function Invite() {
   return (
@@ -13,7 +13,7 @@ function Invite() {
         <div className="invite-overlay">
           <h2 className="invite-intro">Välkommen till</h2>
           <h1 className="invite-title">William & Anastasias Bröllop</h1>
-          <p className="invite-text">26 juni 2025 | Göteborg</p>
+          <p className="invite-text">28 juni 2025 | Erska Kyrka, Gräfsnäs</p>
           <button className="invite-button" onClick={() => document.getElementById("rsvp").scrollIntoView({ behavior: 'smooth' })}>
             OSA
           </button>

@@ -28,7 +28,7 @@ function Navbar() {
         <li><a href="#dresscode" onClick={handleNavLinkClick}>Klädkod</a></li>
         <li><a href="#schedule" onClick={handleNavLinkClick}>Schema</a></li>
         <li><a href="#menu" onClick={handleNavLinkClick}>Meny</a></li>
-        <li><a href="#rsvp" onClick={handleNavLinkClick}>RSVP</a></li>
+        <li><a href="#rsvp" onClick={handleNavLinkClick}>OSA</a></li>
         <li><a href="#wishlist" onClick={handleNavLinkClick}>Gåvor</a></li>
       </ul>
 
