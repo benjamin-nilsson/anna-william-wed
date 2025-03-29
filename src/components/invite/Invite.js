@@ -3,7 +3,7 @@ import Schedule from "../schedule/Schedule";
 import Menu from "../food_drink/Menu";
 import Rsvp from "../rsvp/Rsvp";
 import Wishlist from "../wishlist/Wishlist";
-import InviteImage from "../../images/Home.png";
+import InviteImage from "../../images/W&A.png";
 
 function Invite() {
   return (

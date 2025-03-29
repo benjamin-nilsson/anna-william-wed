@@ -50,8 +50,8 @@ function Rsvp() {
   };
   
   const center = {
-    lat: 58.3693659, // Replace with the correct latitude
-    lng: 13.8228831  // Replace with the correct longitude
+    lat: 58.1167, // Replace with the correct latitude
+    lng: 12.5333  // Replace with the correct longitude
   };
 
   return (
