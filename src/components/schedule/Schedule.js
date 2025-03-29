@@ -21,7 +21,7 @@ function Schedule() {
     { title: "Ceremoni", time: "13:00", desc: "Vigsel tar plats på Erska kyrka", img: Church },
     { title: "Mingel Timme", time: "14:30", desc: "Medans vi inväntar brudparet så bjuds det på meze", img: Mingle },
     { title: "Huvudmiddag", time: "16:00", desc: "Det kommer bjudas på mat för allas smak", img: Food },
-    { title: "Desser", time: "18:00", desc: "Senare mot kvällen så kommer det serveras tårta, drinkar och allt möjligt festligt", img: Dessert },
+    { title: "Dessert", time: "18:00", desc: "Senare mot kvällen så kommer det serveras tårta, drinkar och allt möjligt festligt", img: Dessert },
     { title: "Fest & Dans", time: "20:00", desc: "På kvällen hoopas vi ni kan bjuda på er själva med lite dans och stämning för brudparet", img: Dance },
   ];
 
