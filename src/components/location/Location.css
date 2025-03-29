@@ -27,7 +27,7 @@ h2 {
 
 .location-image {
     width: 50%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -36,8 +36,16 @@ h2 {
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     text-align: center;
+}
+
+.map-header {
+    font-weight: bold;
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: left;
+    text-align: left; /* Moves text to the left */
 }
 
 /* Responsive Layout for Mobile */
