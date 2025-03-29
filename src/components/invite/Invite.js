@@ -1,9 +1,10 @@
 import DressCode from "../dress_code/DressCode";
 import Schedule from "../schedule/Schedule";
 import Menu from "../food_drink/Menu";
+import Location from "../location/Location";
 import Rsvp from "../rsvp/Rsvp";
 import Wishlist from "../wishlist/Wishlist";
-import InviteImage from "../../images/W&A.png";
+import InviteImage from "../../images/Home.png";
 
 function Invite() {
   return (
@@ -36,12 +37,17 @@ function Invite() {
       </div>
 
       {/* RSVP Section */}
-      <div id="rsvp" className="section bg-gray">
+      <div id="location" className="section bg-gray">
+        <Location />
+      </div>
+
+      {/* RSVP Section */}
+      <div id="rsvp" className="section bg-white">
         <Rsvp />
       </div>
 
       {/* Gift List Link */}
-      <div id="wishlist" className="section bg-white">
+      <div id="wishlist" className="section bg-gray">
         <Wishlist />
       </div>
     </div>

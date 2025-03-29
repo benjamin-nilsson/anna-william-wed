@@ -1,0 +1,61 @@
+.location-section {
+    width: 100%;
+    background-color: #809671; /* Deep green background */
+    color: #E5D2B8; /* Warm beige text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #E5D2B8;
+    text-align: center;
+    margin-bottom: 40px; /* Adds space below the header */
+}
+
+.location-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers items in the middle */
+    width: 80%; /* Limits width for better layout */
+    gap: 40px; /* Increases space between image and map */
+    margin-bottom: 3rem; /* Adds space between sections */
+}
+
+.location-image {
+    width: 50%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.rsvp-map {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Responsive Layout for Mobile */
+@media (max-width: 768px) {
+    .location-container {
+        flex-direction: row; /* Change to row layout on mobile */
+        flex-wrap: wrap; /* Ensures proper wrapping if needed */
+        gap: 20px;
+        width: 100%;
+    }
+
+    .location-image,
+    .rsvp-map {
+        width: 100%; /* Make each take half of the width */
+    }
+
+    h2 {
+        font-size: 2rem; /* Slightly smaller heading on mobile */
+        margin-bottom: 20px; /* Reduce spacing */
+    }
+}
