@@ -20,7 +20,7 @@ function Location() {
     return (
         <LoadScript googleMapsApiKey="AIzaSyCJg4ig0r-opZPKFbb1NvZL2dSsAoaXU8c">
             <section className="location-section">
-                <h2 className="text-3xl font-semibold">Plats</h2>
+                <h2 className="location-header">Plats</h2>
 
                 {/* Vigsel Section */}
                 <div className="location-container">
