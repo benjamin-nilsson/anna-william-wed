@@ -178,9 +178,9 @@ html, body {
   display: block;
   font-size: 1rem;
   margin-bottom: 0.4rem;
-  color: #E5D2B8;
+  color: white;
   text-align: left;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 /* Checkbox Styling */
@@ -227,7 +227,7 @@ html, body {
 }
 
 .obs {
-  color: #E5D2B8;
+  color: white;
   text-align: left; /* Moves text to the left */
   width: 100%; /* Ensures it stretches fully */
   margin-bottom: 20px; /* Adjust spacing */

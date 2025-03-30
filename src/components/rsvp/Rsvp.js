@@ -7,9 +7,11 @@ function Rsvp() {
     name: "",
     attending: "Kommer",
     allergies: "",
-    accommodation: "Har fixat boende",
+    tal: false,
     spex: false,
+    description: "",
     questions: "",
+    song: "",
   });
 
   const handleChange = (e) => {
@@ -40,7 +42,10 @@ function Rsvp() {
         attending: "Kommer",
         allergies: "",
         spex: false,
+        tal: false,
         questions: "",
+        description: "",
+        song: "",
       });
     } catch (error) {
       console.error("Error submitting RSVP:", error);
@@ -85,18 +90,38 @@ function Rsvp() {
               checked={formData.spex}
               onChange={handleChange}
             />
-            <label htmlFor="spex">Jag vill hålla spex eller tal</label>
+            <label htmlFor="spex">Jag vill hålla spex</label>
+          </div>
+          <div className="rsvp-item checkbox-container">
+            <input
+              type="checkbox"
+              id="tal"
+              name="tal"
+              checked={formData.tal}
+              onChange={handleChange}
+            />
+            <label htmlFor="tal">Jag vill hålla tal</label>
           </div>
           <div className="rsvp-item">
-            <label>Beskriv ditt spex/tal</label>
+          <label>Låt som du delar med eller får dig tänka på burdparet (endast vid tal/spex) <p style={{color:"red", display: "inline-block"}}>* </p> </label>
+            <input
+              type="text"
+              placeholder="Låt och artist"
+              name="song"
+              value={formData.song}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="rsvp-item">
+            <label>Beskriv ditt spex om du har ett hum om vad</label>
             <textarea
               placeholder="Spex idé..."
-              name="questions"
-              value={formData.questions}
+              name="description"
+              value={formData.description}
               onChange={handleChange} 
             ></textarea>
+          <div className="obs">OBS: Vänligen kontakta <b>Mimmi94m@gmail.com</b> om ditt spex eller tal! <p style={{color:"red", display: "inline-block"}}>* </p> </div>
           </div>
-          <div className="obs">OBS: Vänligen kontakta <b>Mimmi94m@gmail.com</b> om ditt spex eller tal!</div>
           <div className="rsvp-item">
             <label>Frågor?</label>
             <textarea

@@ -10,7 +10,7 @@ function DressCode() {
   return (
 <section className="full-screen p-10 text-center">
   <h2>Klädkod</h2>
-  <p className="description">Dessa färger kommer vara bröllopets tema, och nedan ser du exempel om du vill matcha temat, men man får självklart komma hur man vill</p>
+  <p className="description">Dessa färger kommer vara bröllopets tema, och nedan ser du exempel om du vill matcha temat, men man får självklart komma hur man vill <br></br><br></br>OBS: Vid fint väder kommer mycket av festen hållas utomhus, så ha det i åtanke när du väljer din outfit</p> 
 
   {/* White & Green Circles */}
   <div className="circles-container">
