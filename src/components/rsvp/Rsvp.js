@@ -120,7 +120,7 @@ function Rsvp() {
               value={formData.description}
               onChange={handleChange} 
             ></textarea>
-          <div className="obs underlined">OBS: Vänligen kontakta <b>Mimmi94m@gmail.com</b> om ditt spex eller tal! <br></br>Du kan också återkomma till <b>Mimmi94m@gmail.com</b> senare om du kommer på att du vill hålla ett tal/spex! <p style={{color:"red", display: "inline-block"}}>* </p> </div>
+          <div className="obs underlined">OBS: Vänligen kontakta <b>Mimmi94m@gmail.com</b> om ditt spex eller tal! <p style={{color:"red", display: "inline-block"}}>* </p><br></br>Du kan också återkomma till <b>Mimmi94m@gmail.com</b> senare om du kommer på att du vill hålla ett tal/spex!</div>
           </div>
           <div className="rsvp-item">
             <label>Frågor?</label>
