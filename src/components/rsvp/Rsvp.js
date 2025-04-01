@@ -90,7 +90,7 @@ function Rsvp() {
               checked={formData.spex}
               onChange={handleChange}
             />
-            <label htmlFor="spex">Jag vill hålla spex</label>
+            <label htmlFor="spex">Jag vill hålla spex (brudparet önskar mycket av detta)</label>
           </div>
           <div className="rsvp-item checkbox-container">
             <input
