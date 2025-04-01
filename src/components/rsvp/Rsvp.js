@@ -131,6 +131,7 @@ function Rsvp() {
               onChange={handleChange}
             ></textarea>
           </div>
+          <div className="obs">OBS: SVARA SENAST 30/4 <p style={{color:"red", display: "inline-block"}}>* </p> </div>
           <div className="rsvp-item">
             <button type="submit">Skicka</button>
           </div>
