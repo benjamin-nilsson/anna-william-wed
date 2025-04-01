@@ -86,7 +86,9 @@ const Wishlist = () => {
   return (
     <section className="section">
       <h2 className="wishlist-header">Önskelista</h2>
-
+      <div className="wishlist-desc"><p>Det viktigaste för oss är att få fira denna dag med er, men vi uppskattar gärna ett litet bidrag till vår framtid tillsammans.
+         För detta ser vi gärna pengar, men nedan finns ocskå en lista på saker vi önskar oss.
+         Man kan köpa dessa sjäv eller gå ihop några stycken, man kan markera och avmarkera närsom och man kan därmed återkomma till detta vid ett senare tillfälle.</p></div>
       <div className="add-item-container">
         <button className="add-item-btn" onClick={() => setShowForm(!showForm)}>
           {showForm ? "Close" : "Add Item"}
