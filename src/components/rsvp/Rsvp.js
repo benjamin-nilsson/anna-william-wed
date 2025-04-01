@@ -103,7 +103,7 @@ function Rsvp() {
             <label htmlFor="tal">Jag vill hålla tal</label>
           </div>
           <div className="rsvp-item">
-          <label>Låt som du delar med eller får dig tänka på brudparet (endast vid tal/spex) <p style={{color:"red", display: "inline-block"}}>* </p> </label>
+          <label>Låt som du delar med eller får dig tänka på brudparet (endast vid tal/spex <p style={{color:"red", display: "inline-block"}}>* </p>) </label>
             <input
               type="text"
               placeholder="Låt och artist"
