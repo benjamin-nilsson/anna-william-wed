@@ -226,6 +226,10 @@ html, body {
   color: #E5D2B8;
 }
 
+.underlined {
+  text-decoration: underline;
+}
+
 .obs {
   color: white;
   text-align: left; /* Moves text to the left */

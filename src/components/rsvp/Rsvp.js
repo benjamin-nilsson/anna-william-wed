@@ -120,7 +120,7 @@ function Rsvp() {
               value={formData.description}
               onChange={handleChange} 
             ></textarea>
-          <div className="obs">OBS: Vänligen kontakta <b>Mimmi94m@gmail.com</b> om ditt spex eller tal! <p style={{color:"red", display: "inline-block"}}>* </p> </div>
+          <div className="obs underlined">OBS: Vänligen kontakta <b>Mimmi94m@gmail.com</b> om ditt spex eller tal! <br></br>Du kan också återkomma till Mirjam senare om du kommer på att du vill hålla ett tal/spex! <p style={{color:"red", display: "inline-block"}}>* </p> </div>
           </div>
           <div className="rsvp-item">
             <label>Frågor?</label>
@@ -131,7 +131,7 @@ function Rsvp() {
               onChange={handleChange}
             ></textarea>
           </div>
-          <div className="obs">OBS: SVARA SENAST 30/4 <p style={{color:"red", display: "inline-block"}}>* </p> </div>
+          <div className="obs underlined">OBS: SVARA SENAST 30/4 <p style={{color:"red", display: "inline-block"}}>* </p> </div>
           <div className="rsvp-item">
             <button type="submit">Skicka</button>
           </div>
