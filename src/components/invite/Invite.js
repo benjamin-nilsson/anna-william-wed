@@ -16,7 +16,7 @@ function Invite() {
           <h1 className="invite-title">William & Anastasias Bröllop</h1>
           <p className="invite-text">28 juni 2025 | Erska Kyrka, Gräfsnäs</p>
           <button className="invite-button" onClick={() => document.getElementById("rsvp").scrollIntoView({ behavior: 'smooth' })}>
-            OSA
+            Anmäl här
           </button>
         </div>
       </div>
