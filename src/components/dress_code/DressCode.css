@@ -75,12 +75,12 @@ h2 {
 }
 
 /* Background Colors */
-.bg-matcha { background-color: #809671; }
-.bg-pistashe { background-color: #B3B792; }
-.bg-carob { background-color: #725C3A; }
-.bg-almond { background-color: #E5E0D8; }
-.bg-chai { background-color: #D2AB80; }
-.bg-vanilla { background-color: #E5D2B8; }
+.bg-matcha { background-color: #B87333; }
+.bg-pistashe { background-color: #D2AB80; }
+.bg-carob { background-color: #E5D2B8; }
+.bg-almond { background-color: #F3C6C3; }
+.bg-chai { background-color: #D6A5A1; }
+.bg-vanilla { background-color: #B56455; }
 
 /* Dress Code Image Grid - Responsive & Compact */
 .grid-layout {

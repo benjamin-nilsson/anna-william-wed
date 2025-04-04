@@ -1,10 +1,10 @@
 import "./DressCode.css";  // Import the DressCode.css file
 import BeigeSuit from "../../images/BeigeSuit.png";
-import SexyDress from "../../images/SexyDress.png";
-import GreenBowTie from "../../images/GreenBowTie.png";
-import BeigeDress from "../../images/BeigeDress.png";
-import SummerCouple from "../../images/SummerCouple.png";
-import SummerDress from "../../images/SummerDress.png";
+import BeigeCopper from "../../images/BeigeCopper.png";
+import Copper from "../../images/Copper.png";
+import Pink from "../../images/Pink.png";
+import RedBeige from "../../images/Red&Beige.png";
+import bluepink from "../../images/bluepink.png";
 
 function DressCode() {
   return (
@@ -24,12 +24,12 @@ function DressCode() {
 
   {/* Dress Code Examples Grid */}
   <div className="mt-6 grid grid-cols-3 md:grid-cols-3 gap-4 grid-layout">
-    <img src={SummerCouple} className="image-1" alt="Dress example 1" />
-    <img src={SexyDress} className="image-2" alt="Dress example 2" />
-    <img src={GreenBowTie} className="image-3" alt="Dress example 3" />
-    <img src={BeigeDress} className="image-4" alt="Dress example 4" />
-    <img src={BeigeSuit} className="image-5" alt="Dress example 5" />
-    <img src={SummerDress} className="image-6" alt="Dress example 6" />
+    <img src={RedBeige} className="image-1" alt="Dress example 1" />
+    <img src={BeigeCopper} className="image-2" alt="Dress example 2" />
+    <img src={Copper} className="image-3" alt="Dress example 3" />
+    <img src={Pink} className="image-4" alt="Dress example 4" />
+    <img src={bluepink} className="image-5" alt="Dress example 5" />
+    <img src={BeigeSuit} className="image-6" alt="Dress example 6" />
   </div>
 </section>
   
