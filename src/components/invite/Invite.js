@@ -4,22 +4,22 @@ import Menu from "../food_drink/Menu";
 import Location from "../location/Location";
 import Rsvp from "../rsvp/Rsvp";
 import Wishlist from "../wishlist/Wishlist";
-import InviteImage from "../../images/InviteBackground.png";
+import InviteImage from "../../images/Background1.png";
 
 function Invite() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="invite-section" style={{ backgroundImage: `url(${InviteImage})` }}>
-        <div className="invite-overlay">
-          <h2 className="invite-intro">Välkommen till</h2>
-          <h1 className="invite-title">William & Anastasias Bröllop</h1>
-          <p className="invite-text">28 juni 2025 | Erska Kyrka, Gräfsnäs</p>
-          <button className="invite-button" onClick={() => document.getElementById("rsvp").scrollIntoView({ behavior: 'smooth' })}>
-            Anmäl här
-          </button>
-        </div>
-      </div>
+      <div className="invite-section">
+  <div className="invite-overlay">
+    <h2 className="invite-intro">Välkommen till</h2>
+    <h1 className="invite-title">William & Anastasias Bröllop</h1>
+    <p className="invite-text">28 juni 2025 | Erska Kyrka, Gräfsnäs</p>
+    <button className="invite-button" onClick={() => document.getElementById("rsvp").scrollIntoView({ behavior: 'smooth' })}>
+      Anmäl här
+    </button>
+  </div>
+</div>
 
       {/* Dress Code Section */}
       <div id="dresscode" className="section bg-white">

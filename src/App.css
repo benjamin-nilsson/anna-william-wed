@@ -25,6 +25,7 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  background-image: url("../../anna-william-wedding/src/images/Background2.png");
 }
 
 /* Dark overlay for better text visibility */
@@ -276,5 +277,9 @@ html, body {
 
   .rsvp-container {
     width: 100%;
+  }
+
+  .invite-section {
+    background-image: url("../../anna-william-wedding/src/images/Background1.png");
   }
 }
