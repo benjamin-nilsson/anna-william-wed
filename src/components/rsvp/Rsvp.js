@@ -100,7 +100,7 @@ function Rsvp() {
               checked={formData.tal}
               onChange={handleChange}
             />
-            <label htmlFor="tal">Jag vill hålla tal</label>
+            <label htmlFor="tal">Jag vill hålla tal (max 5 min)</label>
           </div>
           <div className="rsvp-item">
           <label>Låt som du delar med eller får dig tänka på brudparet (endast vid tal/spex <p style={{color:"red", display: "inline-block"}}>* </p>) </label>
@@ -131,7 +131,7 @@ function Rsvp() {
               onChange={handleChange}
             ></textarea>
           </div>
-          <div className="obs underlined">OBS: SVARA SENAST 30/4 <p style={{color:"red", display: "inline-block"}}>* </p> </div>
+          <div className="obs underlined">OBS: SVARA SENAST 15/5 <p style={{color:"red", display: "inline-block"}}>* </p> </div>
           <div className="rsvp-item">
             <button type="submit">Skicka</button>
           </div>

@@ -4,7 +4,7 @@ import Menu from "../food_drink/Menu";
 import Location from "../location/Location";
 import Rsvp from "../rsvp/Rsvp";
 import Wishlist from "../wishlist/Wishlist";
-import InviteImage from "../../images/Home.png";
+import InviteImage from "../../images/InviteBackground.png";
 
 function Invite() {
   return (
